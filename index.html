@@ -11,10 +11,13 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b82f6', // blue-500
-                        secondary: '#1e40af', // blue-800
-                        accent: '#f59e0b', // amber-500
-                        background: '#f8fafc', // slate-50
+                        primary: '#1F7A6E', // Teal green
+                        secondary: '#165e55', // Darker Teal green
+                        accent: '#FF5A5F', // Coral red
+                        background: '#F7F9F9', // Off white background
+                        textDark: '#1E1E1E', // Dark text
+                        textLight: '#6B7280', // Light gray text
+                        cardBg: '#FFFFFF', // White cards
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -26,15 +29,17 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #F7F9F9;
+            color: #1E1E1E;
         }
 
         /* Subtle animated background gradient */
         .bg-gradient-animated {
-            background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #f1f5f9, #cbd5e1);
+            background: linear-gradient(-45deg, #F7F9F9, #e6efef, #F7F9F9, #f0f4f4);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -46,265 +51,281 @@
         }
     </style>
 </head>
-<body class="bg-background text-slate-900 antialiased min-h-screen flex flex-col">
+<body class="bg-background text-textDark antialiased min-h-screen flex flex-col">
 
     <!-- Header / Nav -->
-    <header class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+    <header class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
             <div class="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                <span class="text-xl font-bold tracking-tight">Incognear</span>
+                <span class="text-2xl font-bold tracking-tight text-textDark">incognear</span>
             </div>
-            <nav>
-                <a href="#features" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors mr-6">Features</a>
-                <button class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm inline-flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
-                    Sign In
-                </button>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-base font-medium text-textLight hover:text-textDark transition-colors">Features</a>
+                <a href="#how-it-works" class="text-base font-medium text-textLight hover:text-textDark transition-colors">How it works</a>
             </nav>
+            <div class="flex items-center gap-4">
+                <button class="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-colors shadow-sm inline-flex items-center gap-2">
+                    Log in
+                </button>
+            </div>
         </div>
     </header>
 
     <main class="flex-grow">
         <!-- Hero Section -->
-        <section class="relative pt-20 pb-32 lg:pt-32 lg:pb-48 overflow-hidden bg-gradient-animated">
-            <!-- Decorative background elements -->
-            <div class="absolute inset-0 -z-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CgkJPHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPgoJCTxwYXRoIGQ9Ik0wIDEwaDQwTTAgMjBoNDBNMCAzMGg0ME0xMCAwdjQwTTIwIDB2NDBNMzAgMHY0MCIgc3Ryb2tlPSIjZTJlOGYwIiBzdHJva2Utd2lkdGg9IjEiLz4KCTwvc3ZnPg==')] opacity-40"></div>
+        <section class="relative pt-20 pb-16 lg:pt-28 lg:pb-24 overflow-hidden bg-background">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
-
-                    <!-- Text Content (Left Column) -->
-                    <div class="w-full lg:w-1/2 text-center lg:text-left z-10">
-                        <div class="inline-block mb-4 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-xs font-semibold tracking-wide uppercase">
-                            Connect Locally. Stay Anonymous.
-                        </div>
-                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
-                            The social network for the <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">here and now.</span>
-                        </h1>
-                        <p class="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                            Connect with people around you, right now. Posts, plans, and chats disappear in 24 hours. No permanent records, just real moments.
-                        </p>
-                        <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                            <button class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/><path d="M1 1h22v22H1z" fill="none"/></svg>
-                                Sign in with Google
-                            </button>
-                            <a href="#features" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-sm flex items-center justify-center">
-                                Learn More
-                            </a>
-                        </div>
-                        <p class="mt-6 text-sm text-slate-500">
-                            Get a random username. Customize it later if you want.
-                        </p>
-                    </div>
-
-                    <!-- Illustration (Right Column) -->
-                    <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                        <svg viewBox="0 0 600 500" class="w-full max-w-lg lg:max-w-xl drop-shadow-2xl" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" />
-                                </linearGradient>
-                                <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
-                                </linearGradient>
-                                <linearGradient id="grad3" x1="0%" y1="100%" x2="100%" y2="0%">
-                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
-                                </linearGradient>
-                                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                                    <feGaussianBlur stdDeviation="15" result="blur" />
-                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                                </filter>
-                                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <circle fill="#cbd5e1" cx="2" cy="2" r="2"></circle>
-                                </pattern>
-                            </defs>
-
-                            <!-- Background Elements -->
-                            <rect x="50" y="50" width="500" height="400" fill="url(#dots)" opacity="0.4" rx="30" />
-                            <circle cx="300" cy="250" r="200" fill="#f1f5f9" opacity="0.6" />
-
-                            <!-- Radius/Radar Rings -->
-                            <circle cx="300" cy="250" r="160" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="10,10" />
-                            <circle cx="300" cy="250" r="110" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="10,10" />
-
-                            <!-- Central User Node -->
-                            <g transform="translate(260, 210)">
-                                <circle cx="40" cy="40" r="40" fill="url(#grad1)" filter="url(#glow)" />
-                                <circle cx="40" cy="40" r="30" fill="white" />
-                                <path d="M40 25c-8.28 0-15 6.72-15 15s6.72 15 15 15 15-6.72 15-15-6.72-15-15-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10z" fill="url(#grad1)"/>
-                                <path d="M40 32c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8z" fill="url(#grad1)"/>
-                            </g>
-
-                            <!-- Connected Node 1 (Top Right) -->
-                            <g transform="translate(420, 100)">
-                                <line x1="-80" y1="110" x2="30" y2="40" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8,6" />
-                                <circle cx="30" cy="30" r="30" fill="url(#grad2)" />
-                                <circle cx="30" cy="30" r="20" fill="white" />
-                                <path d="M30 18c-6.63 0-12 5.37-12 12s5.37 12 12 12 12-5.37 12-12-5.37-12-12-12zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="url(#grad2)"/>
-                                <circle cx="55" cy="10" r="8" fill="#ef4444" />
-                            </g>
-
-                            <!-- Connected Node 2 (Bottom Left) -->
-                            <g transform="translate(100, 320)">
-                                <line x1="160" y1="-70" x2="40" y2="30" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8,6" />
-                                <circle cx="35" cy="35" r="35" fill="url(#grad3)" />
-                                <circle cx="35" cy="35" r="25" fill="white" />
-                                <path d="M35 18c-9.39 0-17 7.61-17 17s7.61 17 17 17 17-7.61 17-17-7.61-17-17-17zm0 24c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" fill="url(#grad3)"/>
-                                <circle cx="10" cy="15" r="10" fill="#10b981" />
-                            </g>
-
-                            <!-- Floating Chat Bubbles / Ephemeral Icons -->
-                            <g transform="translate(380, 280)">
-                                <path d="M40 0C17.9 0 0 14.3 0 32c0 10.6 6.3 20 16 26.1V70l14.7-8.8C33.7 61.7 36.8 62 40 62c22.1 0 40-14.3 40-32S62.1 0 40 0z" fill="white" opacity="0.9" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.1))"/>
-                                <circle cx="20" cy="30" r="4" fill="#cbd5e1"/>
-                                <circle cx="40" cy="30" r="4" fill="#cbd5e1"/>
-                                <circle cx="60" cy="30" r="4" fill="#cbd5e1"/>
-                                <path d="M65 15 L75 5 M75 5 L65 5 M75 5 L75 15" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8" />
-                            </g>
-
-                            <g transform="translate(150, 120)">
-                                <path d="M30 0C13.4 0 0 10.7 0 24c0 8 4.7 15 12 19.6V52.5l11-6.6c2.3.4 4.6.6 7 .6 16.6 0 30-10.7 30-24S46.6 0 30 0z" fill="white" opacity="0.9" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.1))"/>
-                                <circle cx="30" cy="24" r="12" fill="none" stroke="#3b82f6" stroke-width="2"/>
-                                <polyline points="30 18 30 24 34 28" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-                            </g>
-
-                            <!-- Location Pins Base -->
-                            <g transform="translate(290, 420)">
-                                <ellipse cx="10" cy="5" rx="25" ry="8" fill="#e2e8f0" />
-                                <path d="M10 -30C-1.05 -30 -10 -21.05 -10 -10C-10 1.05 10 20 10 20C10 20 30 1.05 30 -10C30 -21.05 21.05 -30 10 -30ZM10 -5C7.24 -5 5 -7.24 5 -10C5 -12.76 7.24 -15 10 -15C12.76 -15 15 -12.76 15 -10C15 -7.24 12.76 -5 10 -5Z" fill="#3b82f6" />
-                            </g>
-                        </svg>
+                <!-- Text Content (Centered Top) -->
+                <div class="w-full max-w-4xl mx-auto text-center z-10 mb-16">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-textDark mb-6 leading-tight">
+                        Meet people nearby, <span class="text-accent">anonymously</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-textLight mb-10 max-w-3xl mx-auto font-normal leading-relaxed">
+                        Real life posts from people around you. Chat, join, and meet — all nearby.
+                    </p>
+                    <div class="flex justify-center">
+                        <button class="bg-primary hover:bg-secondary text-white px-10 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Join now
+                        </button>
                     </div>
                 </div>
+
+                <!-- Illustration Container (Centered Middle) -->
+                <div class="w-full max-w-5xl mx-auto flex justify-center relative mb-24">
+                    <svg viewBox="0 0 1000 600" class="w-full h-auto drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+                                <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1E1E1E" flood-opacity="0.08" />
+                            </filter>
+                            <!-- Simple map grid pattern -->
+                            <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#E5E7EB" stroke-width="1.5"/>
+                            </pattern>
+                            <!-- Linear gradient for soft overlays -->
+                            <linearGradient id="fade" x1="0" y1="1" x2="0" y2="0">
+                                <stop offset="0%" stop-color="#F7F9F9" stop-opacity="1" />
+                                <stop offset="40%" stop-color="#F7F9F9" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Base Map Area -->
+                        <!-- Soft pastel city map background -->
+                        <rect width="1000" height="600" fill="#FFFFFF" rx="40" filter="url(#soft-shadow)"/>
+                        <rect width="1000" height="600" fill="url(#grid)" rx="40" />
+
+                        <!-- Map Routes / Roads (Soft Gray) -->
+                        <path d="M 100 0 L 100 600 M 300 0 L 300 600 M 700 0 L 700 600 M 900 0 L 900 600" stroke="#F3F4F6" stroke-width="20" />
+                        <path d="M 0 150 L 1000 150 M 0 350 L 1000 350 M 0 500 L 1000 500" stroke="#F3F4F6" stroke-width="20" />
+
+                        <!-- Diagonal paths for a "modern" map feel -->
+                        <path d="M 0 50 L 1000 450 M 200 -50 L 800 650" stroke="#F9FAFB" stroke-width="30" />
+
+                        <!-- Radius Circles (Teal & Coral) -->
+                        <circle cx="500" cy="300" r="220" fill="#1F7A6E" opacity="0.03" />
+                        <circle cx="500" cy="300" r="220" fill="none" stroke="#1F7A6E" stroke-width="1" stroke-dasharray="8 8" opacity="0.4" />
+                        <circle cx="500" cy="300" r="140" fill="#1F7A6E" opacity="0.05" />
+                        <circle cx="500" cy="300" r="140" fill="none" stroke="#1F7A6E" stroke-width="1" stroke-dasharray="6 6" opacity="0.5" />
+                        <circle cx="500" cy="300" r="60" fill="#FF5A5F" opacity="0.08" />
+
+                        <!-- ============================================== -->
+                        <!-- CORPORATE MEMPHIS CHARACTERS & SCENES          -->
+                        <!-- ============================================== -->
+
+                        <!-- Center Group (Meeting up) -->
+                        <g transform="translate(450, 240)">
+                            <!-- Character 1 (Left) -->
+                            <g transform="translate(0, 30)">
+                                <!-- Body -->
+                                <path d="M 20 50 Q 15 30 25 10 Q 30 0 40 5 Q 45 20 40 50 Z" fill="#1F7A6E" />
+                                <!-- Legs -->
+                                <path d="M 25 50 L 20 90 M 35 50 L 40 90" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round" />
+                                <!-- Head -->
+                                <circle cx="30" cy="0" r="16" fill="#FCA5A5" />
+                                <!-- Face lines -->
+                                <path d="M 28 -2 Q 30 2 32 -2" stroke="#1E1E1E" stroke-width="2" fill="none" stroke-linecap="round" />
+                                <!-- Arm with phone -->
+                                <path d="M 25 20 Q 5 25 10 40" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round" fill="none" />
+                                <!-- Phone -->
+                                <rect x="5" y="38" width="10" height="15" rx="2" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2" transform="rotate(-20 10 40)" />
+                            </g>
+
+                            <!-- Character 2 (Right) -->
+                            <g transform="translate(50, 20)">
+                                <!-- Body -->
+                                <path d="M 15 50 Q 20 20 10 5 Q 5 -5 -5 0 Q -10 20 -5 50 Z" fill="#FF5A5F" />
+                                <!-- Legs -->
+                                <path d="M 5 50 L 10 90 M -5 50 L -15 80" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round" />
+                                <!-- Head -->
+                                <circle cx="5" cy="-5" r="16" fill="#FDE047" />
+                                <!-- Face lines -->
+                                <path d="M 2 -7 Q 5 -3 8 -7" stroke="#1E1E1E" stroke-width="2" fill="none" stroke-linecap="round" />
+                                <!-- Waving Arm -->
+                                <path d="M 10 15 Q 30 0 25 -15" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round" fill="none" />
+                            </g>
+                        </g>
+
+                        <!-- Background Character (Walking, Top Left) -->
+                        <g transform="translate(250, 100) scale(0.8)">
+                            <path d="M 20 50 Q 15 30 25 10 Q 30 0 40 5 Q 45 20 40 50 Z" fill="#D1D5DB" />
+                            <path d="M 25 50 L 10 80 M 35 50 L 45 90" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round" />
+                            <circle cx="30" cy="0" r="16" fill="#93C5FD" />
+                            <path d="M 30 20 Q 50 30 45 50" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round" fill="none" />
+                        </g>
+
+                        <!-- Background Character (Bottom Right) -->
+                        <g transform="translate(700, 380) scale(0.85)">
+                            <path d="M 15 50 Q 20 20 10 5 Q 5 -5 -5 0 Q -10 20 -5 50 Z" fill="#FCD34D" />
+                            <path d="M 5 50 L 10 90 M -5 50 L -20 80" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round" />
+                            <circle cx="5" cy="-5" r="16" fill="#A7F3D0" />
+                            <!-- Arm reading phone -->
+                            <path d="M 0 15 Q -15 20 -10 35" stroke="#1E1E1E" stroke-width="6" stroke-linecap="round" fill="none" />
+                            <rect x="-15" y="32" width="10" height="15" rx="2" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2" transform="rotate(20 -10 35)" />
+                        </g>
+
+
+                        <!-- ============================================== -->
+                        <!-- UI CARDS & FLOATING ELEMENTS                   -->
+                        <!-- ============================================== -->
+
+                        <!-- UI Card 1: Pseudo-anonymous Profile (Top Right) -->
+                        <g transform="translate(680, 80)" filter="url(#soft-shadow)">
+                            <rect width="200" height="90" rx="16" fill="#FFFFFF" />
+                            <!-- Avatar -->
+                            <circle cx="35" cy="45" r="20" fill="#E5E7EB" />
+                            <path d="M 35 35 Q 40 40 45 35 M 25 35 Q 30 40 35 35" stroke="#9CA3AF" stroke-width="2" fill="none" stroke-linecap="round" />
+                            <!-- Mask Icon (Anonymous) -->
+                            <path d="M 25 45 Q 35 55 45 45" stroke="#1F7A6E" stroke-width="3" fill="none" stroke-linecap="round" />
+                            <!-- Text bars -->
+                            <rect x="70" y="30" width="80" height="10" rx="5" fill="#1E1E1E" />
+                            <rect x="70" y="50" width="100" height="8" rx="4" fill="#9CA3AF" />
+                        </g>
+
+                        <!-- UI Card 2: Hyperlocal Post (Bottom Left) -->
+                        <g transform="translate(120, 320)" filter="url(#soft-shadow)">
+                            <rect width="220" height="120" rx="16" fill="#FFFFFF" />
+                            <!-- Pin Icon -->
+                            <circle cx="30" cy="30" r="12" fill="#FF5A5F" opacity="0.2" />
+                            <path d="M 30 22 C 26 22 24 25 24 28 C 24 33 30 38 30 38 C 30 38 36 33 36 28 C 36 25 34 22 30 22 Z" fill="#FF5A5F" />
+                            <circle cx="30" cy="27" r="2.5" fill="#FFFFFF" />
+                            <!-- Text -->
+                            <rect x="55" y="24" width="60" height="8" rx="4" fill="#1E1E1E" />
+                            <rect x="55" y="38" width="40" height="6" rx="3" fill="#9CA3AF" />
+                            <rect x="25" y="65" width="170" height="8" rx="4" fill="#E5E7EB" />
+                            <rect x="25" y="85" width="140" height="8" rx="4" fill="#E5E7EB" />
+                        </g>
+
+                        <!-- UI Card 3: Chat Bubble (Center Right) -->
+                        <g transform="translate(750, 260)" filter="url(#soft-shadow)">
+                            <path d="M 20 0 L 160 0 C 171 0 180 9 180 20 L 180 60 C 180 71 171 80 160 80 L 40 80 L 10 100 L 20 70 C 8 62 0 48 0 35 C 0 15 9 0 20 0 Z" fill="#FFFFFF" />
+                            <circle cx="40" cy="40" r="16" fill="#1F7A6E" opacity="0.1" />
+                            <path d="M 35 40 L 45 40 M 40 35 L 40 45" stroke="#1F7A6E" stroke-width="2" stroke-linecap="round" />
+                            <rect x="70" y="30" width="80" height="8" rx="4" fill="#1E1E1E" />
+                            <rect x="70" y="46" width="50" height="6" rx="3" fill="#9CA3AF" />
+                        </g>
+
+                        <!-- Floating Location Pins -->
+                        <g transform="translate(380, 180)">
+                            <path d="M 15 0 C 6 0 0 6 0 15 C 0 26 15 40 15 40 C 15 40 30 26 30 15 C 30 6 24 0 15 0 Z" fill="#1F7A6E" filter="url(#soft-shadow)" />
+                            <circle cx="15" cy="12" r="5" fill="#FFFFFF" />
+                        </g>
+                        <g transform="translate(560, 420)">
+                            <path d="M 12 0 C 5 0 0 5 0 12 C 0 21 12 32 12 32 C 12 32 24 21 24 12 C 24 5 19 0 12 0 Z" fill="#FF5A5F" filter="url(#soft-shadow)" />
+                            <circle cx="12" cy="10" r="4" fill="#FFFFFF" />
+                        </g>
+
+                        <!-- Small Chat Bubbles / Event Cards -->
+                        <g transform="translate(320, 280)" filter="url(#soft-shadow)">
+                            <rect width="40" height="30" rx="8" fill="#FFFFFF" />
+                            <circle cx="12" cy="15" r="3" fill="#1F7A6E" />
+                            <circle cx="20" cy="15" r="3" fill="#1F7A6E" />
+                            <circle cx="28" cy="15" r="3" fill="#1F7A6E" />
+                        </g>
+                        <g transform="translate(600, 150)" filter="url(#soft-shadow)">
+                            <rect width="60" height="60" rx="12" fill="#FFFFFF" />
+                            <rect x="10" y="10" width="40" height="25" rx="6" fill="#FCA5A5" />
+                            <rect x="10" y="42" width="30" height="6" rx="3" fill="#E5E7EB" />
+                        </g>
+
+                        <!-- Foreground fade out for soft landing page feel -->
+                        <rect x="0" y="500" width="1000" height="100" fill="url(#fade)" />
+                    </svg>
+                </div>
+            </div>
             </div>
 
-            <!-- Abstract Wave Separator -->
-            <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10">
-                <svg class="relative block w-full h-[60px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,117.8,204,114.6,243.34,112.86,282.8,107.8,321.39,56.44Z" fill="#f8fafc"></path>
-                </svg>
-            </div>
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="py-24 bg-background relative">
+        <section id="features" class="py-16 pb-24 bg-background relative z-20 -mt-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Everything you need to connect locally.</h2>
-                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">Incognear strips away the pressure of permanent social media, focusing purely on authentic, local interactions.</p>
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                    <!-- Feature 1: Proximity -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
-                        <div class="relative z-10">
-                            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-3">Hyper-Local Radius</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Interact only with people around you. Adjust your radius from a tight 100 meters up to 10 kilometers. Perfect for campuses, events, or your neighborhood.
-                            </p>
+                    <!-- Feature 1: Hyperlocal posts -->
+                    <div class="bg-cardBg p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-teal-50 text-primary rounded-2xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                         </div>
+                        <h3 class="text-xl font-bold text-textDark mb-3 tracking-tight">Hyperlocal posts</h3>
+                        <p class="text-textLight text-base leading-relaxed">
+                            Discover what's happening within 10km of where you are right now. Content stays relevant to your location.
+                        </p>
                     </div>
 
-                    <!-- Feature 2: Ephemeral -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
-                        <div class="relative z-10">
-                            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-3">Ephemeral by Design</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                No permanent footprint. Every post, plan, and chat disappears after a maximum of 24 hours. Be spontaneous without worrying about the digital record.
-                            </p>
+                    <!-- Feature 2: Pseudo-anonymous -->
+                    <div class="bg-cardBg p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-gray-50 text-gray-700 rounded-2xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12a5 5 0 0 0 5 5 8 8 0 0 1 5 2 8 8 0 0 1 5-2 5 5 0 0 0 5-5V7h-5a8 8 0 0 0-5 2 8 8 0 0 0-5-2H2Z"/><path d="M6 11c1.5 0 3 .5 3 2-2 0-3-1-3-2Z"/><path d="M18 11c-1.5 0-3 .5-3 2 2 0 3-1 3-2Z"/></svg>
                         </div>
+                        <h3 class="text-xl font-bold text-textDark mb-3 tracking-tight">Pseudo-anonymous</h3>
+                        <p class="text-textLight text-base leading-relaxed">
+                            Be yourself without the pressure. Sign in securely, but get a randomized username. No permanent footprint.
+                        </p>
                     </div>
 
-                    <!-- Feature 3: Pseudoanonymous -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-emerald-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
-                        <div class="relative z-10">
-                            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-venetian-mask"><path d="M2 12a5 5 0 0 0 5 5 8 8 0 0 1 5 2 8 8 0 0 1 5-2 5 5 0 0 0 5-5V7h-5a8 8 0 0 0-5 2 8 8 0 0 0-5-2H2Z"/><path d="M6 11c1.5 0 3 .5 3 2-2 0-3-1-3-2Z"/><path d="M18 11c-1.5 0-3 .5-3 2 2 0 3-1 3-2Z"/></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-3">Pseudo-Anonymous</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Quick Google sign-in provides a secure account, but assigns a random, anonymous username. Stay fully anonymous, or customize your nickname and profile pic if you choose.
-                            </p>
+                    <!-- Feature 3: Chat & meet up -->
+                    <div class="bg-cardBg p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-red-50 text-accent rounded-2xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" x2="15" y1="10" y2="10"/><line x1="12" x2="12" y1="7" y2="13"/></svg>
                         </div>
+                        <h3 class="text-xl font-bold text-textDark mb-3 tracking-tight">Chat & meet up</h3>
+                        <p class="text-textLight text-base leading-relaxed">
+                            Start a local chatroom, join public conversations, or direct message people nearby to make plans.
+                        </p>
                     </div>
 
-                    <!-- Feature 4: Chatrooms -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-amber-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
-                        <div class="relative z-10">
-                            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-plus"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" x2="15" y1="10" y2="10"/><line x1="12" x2="12" y1="7" y2="13"/></svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-3">Local Chatrooms</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Create or join public chatrooms to discuss local happenings, or spin up private chats for plans with specific people nearby.
-                            </p>
+                    <!-- Feature 4: Real-time nearby feed -->
+                    <div class="bg-cardBg p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all transform hover:-translate-y-1">
+                        <div class="w-12 h-12 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
                         </div>
+                        <h3 class="text-xl font-bold text-textDark mb-3 tracking-tight">Real-time nearby feed</h3>
+                        <p class="text-textLight text-base leading-relaxed">
+                            Posts are ephemeral, disappearing after 24 hours. The feed is always fresh, showing only the here and now.
+                        </p>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
-             <!-- Background elements -->
-             <div class="absolute inset-0 opacity-10">
-                <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M0 40V0H40" fill="none" stroke="white" stroke-width="1"/>
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
-                </svg>
-            </div>
-
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to see who's around?</h2>
-                <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-light">
-                    Join Incognear today. No strings attached. Start connecting with your immediate surroundings instantly.
-                </p>
-                <button class="bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 rounded-full text-lg font-bold transition-transform transform hover:-translate-y-1 shadow-xl flex items-center justify-center gap-3 mx-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/><path d="M1 1h22v22H1z" fill="none"/></svg>
-                    Start Browsing Anonymously
-                </button>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-12 mt-auto">
+    <footer class="bg-background border-t border-gray-200 py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                    <span class="text-xl font-bold tracking-tight text-slate-800">Incognear</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                    <span class="text-xl font-bold tracking-tight text-textDark">incognear</span>
                 </div>
 
-                <div class="flex gap-6 text-sm text-slate-500">
-                    <a href="#" class="hover:text-slate-900 transition-colors">Privacy</a>
-                    <a href="#" class="hover:text-slate-900 transition-colors">Terms</a>
-                    <a href="#" class="hover:text-slate-900 transition-colors">Contact</a>
+                <div class="flex gap-8 text-sm font-medium text-textLight">
+                    <a href="#" class="hover:text-textDark transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-textDark transition-colors">Terms</a>
+                    <a href="#" class="hover:text-textDark transition-colors">Contact</a>
                 </div>
-            </div>
-            <div class="mt-8 text-center text-sm text-slate-400">
-                &copy; <script>document.write(new Date().getFullYear())</script> Incognear. All rights reserved.
             </div>
         </div>
     </footer>
