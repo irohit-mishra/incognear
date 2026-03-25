@@ -71,28 +71,116 @@
             <!-- Decorative background elements -->
             <div class="absolute inset-0 -z-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CgkJPHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPgoJCTxwYXRoIGQ9Ik0wIDEwaDQwTTAgMjBoNDBNMCAzMGg0ME0xMCAwdjQwTTIwIDB2NDBNMzAgMHY0MCIgc3Ryb2tlPSIjZTJlOGYwIiBzdHJva2Utd2lkdGg9IjEiLz4KCTwvc3ZnPg==')] opacity-40"></div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-                <div class="inline-block mb-4 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-xs font-semibold tracking-wide uppercase">
-                    Connect Locally. Stay Anonymous.
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+
+                    <!-- Text Content (Left Column) -->
+                    <div class="w-full lg:w-1/2 text-center lg:text-left z-10">
+                        <div class="inline-block mb-4 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-xs font-semibold tracking-wide uppercase">
+                            Connect Locally. Stay Anonymous.
+                        </div>
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+                            The social network for the <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">here and now.</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                            Connect with people around you, right now. Posts, plans, and chats disappear in 24 hours. No permanent records, just real moments.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                            <button class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/><path d="M1 1h22v22H1z" fill="none"/></svg>
+                                Sign in with Google
+                            </button>
+                            <a href="#features" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-sm flex items-center justify-center">
+                                Learn More
+                            </a>
+                        </div>
+                        <p class="mt-6 text-sm text-slate-500">
+                            Get a random username. Customize it later if you want.
+                        </p>
+                    </div>
+
+                    <!-- Illustration (Right Column) -->
+                    <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                        <svg viewBox="0 0 600 500" class="w-full max-w-lg lg:max-w-xl drop-shadow-2xl" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="grad3" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="15" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <circle fill="#cbd5e1" cx="2" cy="2" r="2"></circle>
+                                </pattern>
+                            </defs>
+
+                            <!-- Background Elements -->
+                            <rect x="50" y="50" width="500" height="400" fill="url(#dots)" opacity="0.4" rx="30" />
+                            <circle cx="300" cy="250" r="200" fill="#f1f5f9" opacity="0.6" />
+
+                            <!-- Radius/Radar Rings -->
+                            <circle cx="300" cy="250" r="160" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="10,10" />
+                            <circle cx="300" cy="250" r="110" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="10,10" />
+
+                            <!-- Central User Node -->
+                            <g transform="translate(260, 210)">
+                                <circle cx="40" cy="40" r="40" fill="url(#grad1)" filter="url(#glow)" />
+                                <circle cx="40" cy="40" r="30" fill="white" />
+                                <path d="M40 25c-8.28 0-15 6.72-15 15s6.72 15 15 15 15-6.72 15-15-6.72-15-15-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10z" fill="url(#grad1)"/>
+                                <path d="M40 32c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8z" fill="url(#grad1)"/>
+                            </g>
+
+                            <!-- Connected Node 1 (Top Right) -->
+                            <g transform="translate(420, 100)">
+                                <line x1="-80" y1="110" x2="30" y2="40" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8,6" />
+                                <circle cx="30" cy="30" r="30" fill="url(#grad2)" />
+                                <circle cx="30" cy="30" r="20" fill="white" />
+                                <path d="M30 18c-6.63 0-12 5.37-12 12s5.37 12 12 12 12-5.37 12-12-5.37-12-12-12zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="url(#grad2)"/>
+                                <circle cx="55" cy="10" r="8" fill="#ef4444" />
+                            </g>
+
+                            <!-- Connected Node 2 (Bottom Left) -->
+                            <g transform="translate(100, 320)">
+                                <line x1="160" y1="-70" x2="40" y2="30" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8,6" />
+                                <circle cx="35" cy="35" r="35" fill="url(#grad3)" />
+                                <circle cx="35" cy="35" r="25" fill="white" />
+                                <path d="M35 18c-9.39 0-17 7.61-17 17s7.61 17 17 17 17-7.61 17-17-7.61-17-17-17zm0 24c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" fill="url(#grad3)"/>
+                                <circle cx="10" cy="15" r="10" fill="#10b981" />
+                            </g>
+
+                            <!-- Floating Chat Bubbles / Ephemeral Icons -->
+                            <g transform="translate(380, 280)">
+                                <path d="M40 0C17.9 0 0 14.3 0 32c0 10.6 6.3 20 16 26.1V70l14.7-8.8C33.7 61.7 36.8 62 40 62c22.1 0 40-14.3 40-32S62.1 0 40 0z" fill="white" opacity="0.9" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.1))"/>
+                                <circle cx="20" cy="30" r="4" fill="#cbd5e1"/>
+                                <circle cx="40" cy="30" r="4" fill="#cbd5e1"/>
+                                <circle cx="60" cy="30" r="4" fill="#cbd5e1"/>
+                                <path d="M65 15 L75 5 M75 5 L65 5 M75 5 L75 15" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8" />
+                            </g>
+
+                            <g transform="translate(150, 120)">
+                                <path d="M30 0C13.4 0 0 10.7 0 24c0 8 4.7 15 12 19.6V52.5l11-6.6c2.3.4 4.6.6 7 .6 16.6 0 30-10.7 30-24S46.6 0 30 0z" fill="white" opacity="0.9" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.1))"/>
+                                <circle cx="30" cy="24" r="12" fill="none" stroke="#3b82f6" stroke-width="2"/>
+                                <polyline points="30 18 30 24 34 28" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- Location Pins Base -->
+                            <g transform="translate(290, 420)">
+                                <ellipse cx="10" cy="5" rx="25" ry="8" fill="#e2e8f0" />
+                                <path d="M10 -30C-1.05 -30 -10 -21.05 -10 -10C-10 1.05 10 20 10 20C10 20 30 1.05 30 -10C30 -21.05 21.05 -30 10 -30ZM10 -5C7.24 -5 5 -7.24 5 -10C5 -12.76 7.24 -15 10 -15C12.76 -15 15 -12.76 15 -10C15 -7.24 12.76 -5 10 -5Z" fill="#3b82f6" />
+                            </g>
+                        </svg>
+                    </div>
                 </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 max-w-4xl mx-auto leading-tight">
-                    The social network for the <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">here and now.</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                    Connect with people around you, right now. Posts, plans, and chats disappear in 24 hours. No permanent records, just real moments.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/><path d="M1 1h22v22H1z" fill="none"/></svg>
-                        Sign in with Google
-                    </button>
-                    <a href="#features" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-sm flex items-center justify-center">
-                        Learn More
-                    </a>
-                </div>
-                <p class="mt-6 text-sm text-slate-500">
-                    Get a random username. Customize it later if you want.
-                </p>
             </div>
 
             <!-- Abstract Wave Separator -->
